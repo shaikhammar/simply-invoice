@@ -29,7 +29,7 @@ export function SiteHeader() {
         <header className="flex sticky top-0 z-50 w-full items-center justify-center border-b bg-background">
             {/* <div className="flex h-[--header-height] lg:w-[80%] sm:w-full justify-around items-center gap-2 px-4"> */}
             {isMobile ? (
-                <div className="flex h-[--header-height] w-full justify-center items-center gap-8">
+                <div className="flex h-[--header-height] w-full justify-between items-center">
                     <div className="flex items-center">
                         <Button
                             className="h-8 w-8"
@@ -43,6 +43,16 @@ export function SiteHeader() {
                     <div className="flex items-center">
                         <Wallet className="mr-2 h-6 w-6" />
                         <h1 className="text-2xl font-bold">Simply Invoice 2</h1>
+                    </div>
+                    <div className="flex items-center">
+                        <Button
+                            className="h-8 w-8"
+                            variant="ghost"
+                            size="icon"
+                            onClick={toggleSidebar}
+                        >
+                            <SidebarIcon />
+                        </Button>
                     </div>
                 </div>
             ) : (
