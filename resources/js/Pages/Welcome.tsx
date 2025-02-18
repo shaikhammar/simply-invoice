@@ -1,6 +1,9 @@
+import InvoiceForm from "@/Components/InvoiceForm";
 import { AppSidebar } from "@/Components/shadcn/app-sidebar";
 import { SiteHeader } from "@/Components/shadcn/site-header";
+import { Card } from "@/Components/shadcn/ui/card";
 import { SidebarInset, SidebarProvider } from "@/Components/shadcn/ui/sidebar";
+import Guest from "@/Layouts/GuestLayout";
 import { PageProps } from "@/types";
 import { Head, Link } from "@inertiajs/react";
 
@@ -22,25 +25,18 @@ export default function Welcome({
 
     return (
         <>
-            <Head title="Welcome" />
-            <div className="[--header-height:calc(theme(spacing.14))]">
-                <SidebarProvider className="flex flex-col">
-                    <SiteHeader />
-                    <div className="flex flex-1">
-                        <AppSidebar />
-                        <SidebarInset>
-                            <div className="flex flex-1 flex-col gap-4 p-4">
-                                <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                                    <div className="aspect-video rounded-xl bg-muted/50" />
-                                    <div className="aspect-video rounded-xl bg-muted/50" />
-                                    <div className="aspect-video rounded-xl bg-muted/50" />
-                                </div>
-                                <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
-                            </div>
-                        </SidebarInset>
-                    </div>
-                </SidebarProvider>
+            <div className="flex flex-1 flex-col gap-4 p-4">
+                <div className="grid auto-rows-min gap-3 md:grid-cols-3 md:grid-rows-3">
+                    <Card className="col-span-2 rounded-lg bg-muted/90 row-span-3 h-100vh">
+                        <InvoiceForm />
+                    </Card>
+                    <Card className="col-span-1 rounded-lg bg-muted/90 row-span-2 "></Card>
+                </div>
             </div>
         </>
     );
 }
+
+Welcome.layout = (page: React.ReactNode) => (
+    <Guest children={page} title="Invoices" />
+);
