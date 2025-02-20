@@ -61,10 +61,10 @@ export function SiteHeader() {
                 </div>
             ) : (
                 <div className="flex h-[--header-height] w-full justify-between items-center gap-2 px-4">
-                    <div className="flex items-center">
+                    <Link href={route("home")} className="flex items-center">
                         <Wallet className="mr-2 h-6 w-6" />
                         <h1 className="text-2xl font-bold">Simply Invoice</h1>
-                    </div>
+                    </Link>
                     <div className="flex items-center gap-2">
                         <NavigationMenu>
                             <NavigationMenuList>

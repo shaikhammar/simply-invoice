@@ -4,11 +4,11 @@ function InvoiceForm() {
     return (
         <>
             <div className="flex flex-1 flex-col gap-4 p-4">
-                <div className="grid auto-rows-min gap-3 md:grid-cols-3 md:grid-rows-3">
+                <div className="grid auto-rows-min gap-3 md:grid-cols-3 md:grid-rows-4">
                     <div className="col-span-2 row-span-1 p-4">
                         Invoice Title
                     </div>
-                    <div className="col-span-1 row-span-3 p-4">
+                    <div className="col-span-1 row-span-4 p-4">
                         Invoice Logo
                     </div>
                     <div className="col-span-2 row-span-1 px-4">
@@ -16,6 +16,9 @@ function InvoiceForm() {
                     </div>
                     <div className="col-span-2 row-span-1 px-4">
                         Invoice Date
+                    </div>
+                    <div className="col-span-2 row-span-1 px-4">
+                        Invoice Term
                     </div>
                 </div>
                 <div className="grid auto-rows-min gap-3 md:grid-cols-2 px-4">
